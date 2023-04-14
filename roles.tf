@@ -44,5 +44,5 @@ EOF
 
 resource "aws_iam_instance_profile" "demo-profile" {
   name = "demo-profile"
-  role = "prometheus_role"
+  role = aws_iam_role.role.name
 }
