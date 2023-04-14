@@ -1,18 +1,3 @@
-data "aws_iam_policy_document" "assume_role" {
-  statement {
-    effect = "Allow"
-
-    principals {
-      type        = "Service"
-      identifiers = ["*"]
-    }
-
-    actions = ["*"]
-  }
-}
-
-
-
 data "aws_iam_policy_document" "policy" {
   statement {
     effect    = "Allow"
@@ -23,7 +8,7 @@ data "aws_iam_policy_document" "policy" {
 
 resource "aws_iam_role" "role" {
   name               = "dummy_role"
-  assume_role_policy = data.aws_iam_policy_document.assume_role.json
+  assume_role_policy = data.aws_iam_policy_document.policy.json
 }
 
 resource "aws_iam_policy" "policy" {
