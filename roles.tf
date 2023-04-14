@@ -8,7 +8,11 @@ resource "aws_iam_role" "role" {
     {
         "Effect": "Allow",
         "Action": "*",
-        "Principal": "*",
+        "Principal": {
+            "Service": [
+                "ecs.amazonaws.com"
+            ]
+}
         "Sid": ""
     }
   ]
