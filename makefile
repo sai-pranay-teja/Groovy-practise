@@ -1,4 +1,4 @@
-git:
+git: destroy
 	git pull
 
 apply: git
