@@ -7,10 +7,6 @@ terraform {
   }
 }
 
-locals {
-  public_ip=aws_spot_instance_request.name_2.public_ip
-}
-
 
 provider "jenkins" {
     server_url = "http://44.205.21.179:8080/"

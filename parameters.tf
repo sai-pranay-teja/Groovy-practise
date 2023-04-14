@@ -1,4 +1,4 @@
-/* provider "aws" {
+provider "aws" {
   region = "us-east-1"
   
 }
@@ -15,6 +15,6 @@ resource "aws_ssm_parameter" "jenkins_pass" {
   type  = "String"
   value = "Pranay1700#"
   
-} */
+}
 
 
