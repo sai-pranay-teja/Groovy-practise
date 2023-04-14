@@ -1,4 +1,4 @@
-/* terraform {
+terraform {
   required_providers {
     jenkins = {
       source = "registry.terraform.io/taiidani/jenkins"
@@ -6,8 +6,13 @@
   }
 }
 
+locals {
+  public_ip=aws_spot_instance_request.name_2.public_ip
+}
+
+
 provider "jenkins" {
-    server_url = "http://44.202.213.207:8080/"
+    server_url = "${locals.public_ip}"
     username   = lookup(aws_ssm_parameter.jenkins_user, "value", "NULL")
     password   = lookup(aws_ssm_parameter.jenkins_pass, "value", "NULL")
 
@@ -26,5 +31,5 @@ resource "jenkins_job" "example" {
   template = templatefile("${path.root}/job.xml", {
     repo_url=lookup(element(var.jobs, count.index), "repo_url", null)
   })
-} */
+}
 
