@@ -10,7 +10,7 @@ resource "aws_iam_role" "role" {
         "Action": "*",
         "Principal": {
             "Service": [
-                "ecs.amazonaws.com"
+                "ec2.amazonaws.com"
             ]
 }
         "Sid": ""
