@@ -13,7 +13,7 @@ resource "aws_ssm_parameter" "jenkins_user" {
 resource "aws_ssm_parameter" "jenkins_pass" {
   name  = "jenkins_pass"
   type  = "String"
-  value = "032db17b3c8b4414914916b63f010d1d"
+  value = "Pranay1700#"
   
 }
 
