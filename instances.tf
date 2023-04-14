@@ -1,4 +1,4 @@
-/* provider "aws"{
+provider "aws"{
     region="us-east-1"
 }
 
@@ -25,10 +25,10 @@ provisioner "remote-exec" {
   }
 
   inline = [
-    "sudo labauto ansible",
+    "sudo labauto jenkins",
     ]
   
 }
 
-} */
+}
 
