@@ -1,4 +1,4 @@
-terraform {
+/* terraform {
   required_providers {
     jenkins = {
       source = "registry.terraform.io/taiidani/jenkins"
@@ -25,5 +25,5 @@ resource "jenkins_job" "example" {
   template = templatefile("${path.root}/job.xml", {
     repo_url=lookup(element(var.jobs, count.index), "repo_url", null)
   })
-}
+} */
 
