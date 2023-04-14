@@ -7,7 +7,7 @@ resource "aws_spot_instance_request" "name_2" {
     wait_for_fulfillment=true
     vpc_security_group_ids = ["sg-036e9bfb37a180657"]
     tags = {
-      Name = "jenkins"
+      Name = "Instance-1"
     }
 
     timeouts {
