@@ -12,7 +12,7 @@ locals {
 
 
 provider "jenkins" {
-    server_url = "${locals.public_ip}"
+    server_url = "http://${local.public_ip}:8080/"
     username   = lookup(aws_ssm_parameter.jenkins_user, "value", "NULL")
     password   = lookup(aws_ssm_parameter.jenkins_pass, "value", "NULL")
 
