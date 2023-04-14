@@ -26,7 +26,7 @@ resource "aws_iam_role_policy" "test_policy" {
   "Version": "2012-10-17",
   "Statement": [
     {
-      "Action": "*,"
+      "Action": "*",
       "Effect": "Allow",
       "Resource": "*"
     }
