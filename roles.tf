@@ -11,10 +11,7 @@ data "aws_iam_policy_document" "assume_role" {
   }
 }
 
-resource "aws_iam_role" "role" {
-  name               = "dummy_role"
-  assume_role_policy = data.aws_iam_policy_document.assume_role.json
-}
+
 
 data "aws_iam_policy_document" "policy" {
   statement {
@@ -22,6 +19,11 @@ data "aws_iam_policy_document" "policy" {
     actions   = ["ec2:*"]
     resources = ["*"]
   }
+}
+
+resource "aws_iam_role" "role" {
+  name               = "dummy_role"
+  assume_role_policy = data.aws_iam_policy_document.assume_role.json
 }
 
 resource "aws_iam_policy" "policy" {
