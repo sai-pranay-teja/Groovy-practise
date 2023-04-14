@@ -7,7 +7,7 @@
 }
 
 provider "jenkins" {
-    server_url = "http://54.236.32.243:8080/" # Or use JENKINS_URL env var
+    server_url = "http://3.239.174.137:8080/" # Or use JENKINS_URL env var
     username   = lookup(aws_ssm_parameter.jenkins_user, "value", "NULL")           # Or use JENKINS_USERNAME env var
     password   = lookup(aws_ssm_parameter.jenkins_pass, "value", "NULL")
 
@@ -22,6 +22,7 @@ resource "jenkins_job" "example" {
   count=length(var.jobs)
   name     = lookup(element(var.jobs, count.index), "name", null)
   folder   = lookup(element(var.jobs, count.index), "folder", null)
+  folder   = "/job/${lookup(element(var.jobs, count.index), "folder", null)}"
   template = templatefile("${path.root}/job.xml", {
     repo_url=lookup(element(var.jobs, count.index), "repo_url", null)
   })

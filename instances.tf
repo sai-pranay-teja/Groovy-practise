@@ -1,7 +1,3 @@
-provider "aws"{
-    region="us-east-1"
-}
-
 resource "aws_spot_instance_request" "name_2" {
     ami           = "ami-0bb6af715826253bf"
     instance_type = "t3a.small"
@@ -35,7 +31,39 @@ provisioner "remote-exec" {
 
 }
 
-resource "aws_iam_instance_profile" "demo-profile" {
-  name = "demo_profile"
-  role = "prometheus_role"
+resource "aws_iam_role_policy" "test_policy" {
+  name = "test_policy"
+  role = aws_iam_role.test_role.id
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Action = [
+          "ec2:*",
+        ]
+        Effect   = "Allow"
+        Resource = "*"
+      },
+    ]
+  })
+}
+
+resource "aws_iam_role" "test_role" {
+  name = "test_role"
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Action = "*"
+        Effect = "*"
+        resource = "*"
+      },
+    ]
+  })
+}
+
+resource "aws_iam_role_policy_attachment" "demo_profile" {
+  name       = "demo_profile"
+  role       = aws_iam_role.test_role.name
 }

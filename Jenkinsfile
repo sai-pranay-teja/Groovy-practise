@@ -1,3 +1,3 @@
-@library('global_pipeline')
+// @library('global_pipeline')
 
-jenkinsfile-practise-declaritive()
+// jenkinsfile-practise-declaritive()
