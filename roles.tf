@@ -1,35 +1,39 @@
-resource "aws_iam_policy" "policy" {
-  name        = "test_policy"
-  path        = "/"
-  policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
-      {
-        Action = [
-          "ec2:*",
-        ]
-        Effect   = "Allow"
-        Resource = "*"
-      },
-    ]
-  })
+resource "aws_iam_role" "test_role" {
+  name = "test_role"
+
+  assume_role_policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": "sts:AssumeRole",
+      "Principal": "*",
+      "Effect": "Allow",
+      "Sid": ""
+    }
+  ]
+}
+EOF
+
 }
 
-resource "aws_iam_role" "role" {
-  name               = "dummy_role"
-  assume_role_policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
-      {
-        Action = "*"
-        Effect = "Allow"
-        Sid    = ""
-        Principal = "*"
-      },
-    ]
-  })
-}
+resource "aws_iam_role_policy" "test_policy" {
+  name = "test_policy"
+  role = "${aws_iam_role.test_role.id}"
 
+  policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": "*,"
+      "Effect": "Allow",
+      "Resource": "*"
+    }
+  ]
+}
+EOF
+}
 
 resource "aws_iam_role_policy_attachment" "test-attach" {
   role       = aws_iam_role.role.name
