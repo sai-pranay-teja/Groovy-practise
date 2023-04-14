@@ -2,7 +2,7 @@ git:
 	rm -rf .terraform* terraform*
 	git pull
 
-apply-instance: git
+apply: git
 	terraform init
 	terraform apply -auto-approve
 
