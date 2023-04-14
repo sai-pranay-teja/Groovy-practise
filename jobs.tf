@@ -1,3 +1,4 @@
+
 /* terraform {
   required_providers {
     jenkins = {
@@ -31,5 +32,9 @@ resource "jenkins_job" "example" {
   template = templatefile("${path.root}/job.xml", {
     repo_url=lookup(element(var.jobs, count.index), "repo_url", null)
   })
-} */
+}
 
+
+
+
+ */
