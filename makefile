@@ -7,5 +7,5 @@ apply: git
 
 
 
-destroy: git
+destroy:
 	terraform destroy -auto-approve
