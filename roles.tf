@@ -20,7 +20,7 @@ resource "aws_iam_role" "role" {
 
 resource "aws_iam_policy" "policy" {
   name        = "dummy_policy"
-  policy      = data.aws_iam_policy_document.policy.json
+  policy      = data.aws_iam_policy_document.assume_role.json
 }
 
 resource "aws_iam_role_policy_attachment" "test-attach" {
