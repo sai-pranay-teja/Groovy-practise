@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "jenkins" {
-    server_url = var.url # Or use JENKINS_URL env var
+    server_url = element(var.url) # Or use JENKINS_URL env var
     username   = lookup(aws_ssm_parameter.jenkins_user, "value", "NULL")           # Or use JENKINS_USERNAME env var
     password   = lookup(aws_ssm_parameter.jenkins_pass, "value", "NULL")
 
