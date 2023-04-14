@@ -1,6 +1,4 @@
-variable "url"{
-    default=""
-}
+
 
 variable "jobs-folder"{
     default=["folder_1"]
