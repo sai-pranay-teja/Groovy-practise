@@ -25,7 +25,7 @@ resource "aws_iam_role" "role" {
         Effect = "Allow"
         Sid    = ""
         Principal = {
-          Service = "*"
+          Service = "ec2.amazonaws.com"
         }
       },
     ]
