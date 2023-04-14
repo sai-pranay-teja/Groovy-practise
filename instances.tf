@@ -50,7 +50,7 @@ resource "aws_iam_role_policy" "test_policy" {
 }
 
 resource "aws_iam_role" "test_role" {
-  name = "test_role"
+  name = "dummy_role"
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
