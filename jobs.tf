@@ -1,8 +1,7 @@
 terraform {
   required_providers {
     jenkins = {
-      source = "taiidani/jenkins"
-      version = "0.10.1"
+      source = "registry.terraform.io/taiidani/jenkins"
     }
   }
 }
