@@ -1,4 +1,4 @@
-resource "aws_spot_instance_request" "name_2" {
+/* resource "aws_spot_instance_request" "name_2" {
     ami           = "ami-0bb6af715826253bf"
     instance_type = "t3a.small"
     spot_type     = "persistent"
@@ -29,4 +29,4 @@ provisioner "remote-exec" {
   
 }
 
-}
+} */
