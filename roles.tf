@@ -1,4 +1,4 @@
-resource "aws_iam_role" "test_role" {
+resource "aws_iam_role" "role" {
   name = "test_role"
 
   assume_role_policy = <<EOF
@@ -17,7 +17,7 @@ EOF
 
 }
 
-resource "aws_iam_role_policy" "test_policy" {
+resource "aws_iam_role_policy" "policy" {
   name = "test_policy"
   role = "${aws_iam_role.test_role.id}"
 
