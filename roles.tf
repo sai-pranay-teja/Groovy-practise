@@ -42,7 +42,7 @@ EOF
 
 
 
-/* resource "aws_iam_instance_profile" "demo-profile" {
+resource "aws_iam_instance_profile" "demo-profile" {
   name = "demo-profile"
   role = "prometheus_role"
-} */
+}
