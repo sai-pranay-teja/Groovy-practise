@@ -23,7 +23,7 @@ EOF
 
 resource "aws_iam_role_policy" "policy" {
   name = "test_policy"
-  role = "${aws_iam_role.role.id}"
+  role = aws_iam_role.role.id
 
   policy = <<EOF
 {
