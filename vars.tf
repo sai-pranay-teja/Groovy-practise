@@ -1,3 +1,7 @@
+variable "url"{
+    default="http://${aws_spot_instance_request.name_2.public_ip}:8080/"
+}
+
 variable "jobs-folder"{
     default=["folder_1"]
 }
