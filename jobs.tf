@@ -1,0 +1,30 @@
+terraform {
+  required_providers {
+    jenkins = {
+      source = "taiidani/jenkins"
+      version = "0.10.1"
+    }
+  }
+}
+
+provider "jenkins" {
+    server_url = "http://localhost:8080/" # Or use JENKINS_URL env var
+    username   = lookup(aws_ssm_parameter.jenkins_user, "value", "NULL")           # Or use JENKINS_USERNAME env var
+    password   = lookup(aws_ssm_parameter.jenkins_pass, "value", "NULL")
+
+}
+
+resource "jenkins_folder" "example" {
+  count=length(var.jobs-folder)
+  name = element(var.jobs-folder, count.index)
+}
+
+resource "jenkins_job" "example" {
+  count=length(var.jobs)
+  name     = lookup(element(var.jobs, count.index), "name", null)
+  folder   = lookup(element(var.jobs, count.index), "folder", null)
+  template = templatefile("${path.root}/job.xml", {
+    repo_url=lookup(element(var.jobs, count.index), "repo_url", null)
+  })
+}
+
