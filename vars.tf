@@ -13,3 +13,6 @@ variable "jobs"{
         }
     ]
 }
+
+variable "jobs-folder" {}
+variable "jobs" {}
