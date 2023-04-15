@@ -4,10 +4,10 @@ git:
 
 apply: git
 	terraform init
-	terraform apply -var-file=vars.tfvars -auto-approve
+	terraform apply -auto-approve
 
 
 
 
 destroy:
-	terraform destroy -var-file=vars.tfvars -auto-approve
+	terraform destroy -auto-approve
