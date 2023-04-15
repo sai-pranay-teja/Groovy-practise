@@ -4,7 +4,7 @@ git:
 
 apply: git
 	terraform init
-	terraform apply -auto-approve
+	terraform apply -auto-approve -var-tfile=vars.tfvars
 
 
 
