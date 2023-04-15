@@ -1,4 +1,4 @@
-/* resource "aws_iam_role" "role" {
+resource "aws_iam_role" "role" {
   name = "test_role"
 
   assume_role_policy = <<EOF
@@ -45,4 +45,4 @@ EOF
 resource "aws_iam_instance_profile" "demo-profile" {
   name = "demo-profile"
   role = aws_iam_role.role.name
-} */
+}

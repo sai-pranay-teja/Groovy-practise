@@ -1,4 +1,4 @@
-
+/* 
 terraform {
   required_providers {
     jenkins = {
@@ -16,14 +16,14 @@ provider "jenkins" {
 }
 
 resource "jenkins_folder" "example" {
-  /* count=length(var.jobs-folder) */
+  count=length(var.jobs-folder)
   name = var.jobs-folder
 }
 
 resource "jenkins_job" "example" {
   count=length(var.jobs)
   name     = lookup(element(var.jobs, count.index), "name", null)
-  #folder   = lookup(element(var.jobs, count.index), "folder", null)
+  folder   = lookup(element(var.jobs, count.index), "folder", null)
   folder   = "/job/${lookup(element(var.jobs, count.index), "folder", null)}"
   template = templatefile("${path.root}/job.xml", {
     repo_url=lookup(element(var.jobs, count.index), "repo_url", null)
@@ -33,4 +33,4 @@ resource "jenkins_job" "example" {
 
 
 
-
+ */
