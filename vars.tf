@@ -1,14 +1,14 @@
 
 
 variable "jobs-folder"{
-    default="folder"
+    default="infra"
 }
 
 variable "jobs"{
     default=[
         {
             name="example",
-            folder="folder", 
+            folder="infra", 
             repo_url="https://github.com/sai-pranay-teja/Groovy-practise.git"
         }
     ]
