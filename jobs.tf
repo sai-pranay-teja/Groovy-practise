@@ -1,4 +1,4 @@
-/* 
+
 terraform {
   required_providers {
     jenkins = {
@@ -9,7 +9,7 @@ terraform {
 
 
 provider "jenkins" {
-    server_url = "http://44.215.108.73:8080/"
+    server_url = "http://3.235.7.149:8080/"
     username   = lookup(aws_ssm_parameter.jenkins_user, "value", "NULL")
     password   = lookup(aws_ssm_parameter.jenkins_pass, "value", "NULL")
 
@@ -27,7 +27,7 @@ resource "jenkins_job" "example" {
   template = templatefile("${path.root}/job.xml", {
     repo_url=lookup(element(var.jobs, count.index), "repo_url", null)
   })
-} */
+}
 
 
 
