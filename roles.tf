@@ -19,7 +19,7 @@ resource "aws_iam_role" "role" {
     ]
 }
 EOF
-overwrite = true
+
 
 }
 
@@ -39,7 +39,7 @@ resource "aws_iam_role_policy" "policy" {
   ]
 }
 EOF
-overwrite = true
+
 }
 
 
@@ -47,5 +47,5 @@ overwrite = true
 resource "aws_iam_instance_profile" "demo-profile" {
   name = "demo-profile"
   role = aws_iam_role.role.name
-  overwrite = true
+
 }
