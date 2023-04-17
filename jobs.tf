@@ -18,7 +18,8 @@ provider "jenkins" {
 }
 
 resource "jenkins_folder" "example" {
-  name = var.jobs-folder
+  count = length(var.jobs-folder)
+  name = element(var.jobs-folder, count.index)
 }
 
 resource "jenkins_job" "example" {
