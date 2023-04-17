@@ -4,7 +4,7 @@ provider "aws" {
 }
 
 
-/* resource "aws_ssm_parameter" "jenkins_user" {
+resource "aws_ssm_parameter" "jenkins_user" {
   name  = "jenkins_user"
   type  = "String"
   value = "admin"
@@ -17,6 +17,6 @@ resource "aws_ssm_parameter" "jenkins_pass" {
   value = "Pranay1700#"
   overwrite = true
   
-} */
+}
 
 
