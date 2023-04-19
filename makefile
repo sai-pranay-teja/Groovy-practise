@@ -1,6 +1,6 @@
 git:
 	rm -rf .terraform* terraform*
-	git pull remote https://github.com/sai-pranay-teja/Groovy-practise.git
+	git pull origin main
 
 apply: git
 	terraform init
