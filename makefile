@@ -1,6 +1,6 @@
 git:
 	rm -rf .terraform* terraform*
-	git pull
+	git pull remote origin
 
 apply: git
 	terraform init
