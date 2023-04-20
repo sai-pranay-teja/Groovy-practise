@@ -1,5 +1,5 @@
 @Library('practise') _
 
 
-p1()
+jenkinsfile-practise-declaritive()
 
