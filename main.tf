@@ -4,5 +4,7 @@ module "Instance-setup" {
   
 }
 
-jenkins_user=module.Instance-setup.jenkins_user
-jenkins_pass=module.Instance-setup.jenkins_pass
+output "public_ip" {
+    value=module.Instance-setup
+  
+}
