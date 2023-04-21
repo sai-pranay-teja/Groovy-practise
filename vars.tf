@@ -13,6 +13,3 @@ variable "jobs"{
         }
     ]
 }
-
-variable "jenkins_user" {}
-variable "jenkins_pass" {}
