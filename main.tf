@@ -6,7 +6,6 @@ module "Instance-setup" {
 
 
 module "Jenkins-setup" {
-    depends_on = [module.Instance-setup]
     source = "./Jenkins-setup"
     public_ip=module.Instance-setup.public_ip
   
