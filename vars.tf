@@ -14,5 +14,5 @@ variable "jobs"{
     ]
 }
 
-variable "username" {}
-variable "password" {}
+variable "jenkins_user" {}
+variable "jenkins_pass" {}
