@@ -11,7 +11,3 @@ module "Jenkins-setup"{
     public_ip=module.Instance-setup.public_ip
 }
 
-output "public_ip" {
-    value=module.Instance-setup
-  
-}
