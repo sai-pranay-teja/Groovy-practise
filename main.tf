@@ -4,10 +4,10 @@ module "Instance-setup" {
   
 }
 
-
+/* 
 module "Jenkins-setup"{
     source = "./Jenkins-setup"
     #public_ip=module.Instance-setup.public_ip
     public_ip=module.Instance-setup.public_ip
-}
+} */
 
