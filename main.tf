@@ -4,7 +4,3 @@ module "Instance-setup" {
   
 }
 
-output "public_ip" {
-    value=module.Instance-setup
-  
-}
