@@ -1,4 +1,4 @@
-variable "public_ip"{}
+
 
 variable "jobs-folder"{
     default=["folder"]
