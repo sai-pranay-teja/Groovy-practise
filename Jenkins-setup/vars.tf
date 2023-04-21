@@ -14,4 +14,4 @@ variable "jobs"{
     ]
 }
 
-variable "public_ip" {}
+variable "public_ip"{}
