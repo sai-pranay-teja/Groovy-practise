@@ -9,12 +9,9 @@ module "Instance-setup" {
 }
 
 
-module "Jenkins-setup"{
-    depends_on = [
-      module.Instance-setup
-    ]
+/* module "Jenkins-setup"{
+    
     source = "git::https://github.com/sai-pranay-teja/Jenkins-setup.git"
-    public_ip=module.Instance-setup.public_ip
    
-}
+} */
 
