@@ -3,7 +3,7 @@ provider "aws" {
   
 }
 module "Instance-setup" {
-    source = "git::https://github.com/sai-pranay-teja/Instance-setup.git"
+    source = "./Instance-setup"
     
   
 }
@@ -14,6 +14,7 @@ module "Jenkins-setup"{
       module.Instance-setup
     ]
     source = "./Jenkins-setup"
+    public_ip=module.Instance-setup.public_ip
    
 }
 

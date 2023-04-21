@@ -9,7 +9,7 @@ terraform {
 
 
 provider "jenkins" {
-    server_url = "http://3.230.0.163:8080/"
+    server_url = "http://${var.public_ip}:8080/"
     username   = lookup(aws_ssm_parameter.jenkins_user, "value", "NULL")
     password   = lookup(aws_ssm_parameter.jenkins_pass, "value", "NULL")
 
