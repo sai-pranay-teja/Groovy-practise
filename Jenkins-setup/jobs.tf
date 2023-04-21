@@ -9,7 +9,6 @@ terraform {
 
 
 provider "jenkins" {
-  depends_on=[module.Instance-setup]
     server_url = "http://3.230.0.163:8080/"
     username   = lookup(aws_ssm_parameter.jenkins_user, "value", "NULL")
     password   = lookup(aws_ssm_parameter.jenkins_pass, "value", "NULL")
