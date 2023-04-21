@@ -1,4 +1,4 @@
-
+variable "public_ip"{}
 
 variable "jobs-folder"{
     default=["folder"]
@@ -14,4 +14,3 @@ variable "jobs"{
     ]
 }
 
-variable "public_ip"{}
