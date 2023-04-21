@@ -13,3 +13,5 @@ variable "jobs"{
         }
     ]
 }
+
+variable "public_ip" {}
