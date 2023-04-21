@@ -1,5 +1,4 @@
 git:
-	rm -rf .terraform* terraform*
 	git pull origin main
 
 apply: git
