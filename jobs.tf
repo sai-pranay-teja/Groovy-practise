@@ -12,8 +12,8 @@ provider "jenkins" {
     server_url = "http://34.234.167.177:8080/"
     #username   = lookup(aws_ssm_parameter.jenkins_user, "value", "NULL")
     #password   = lookup(aws_ssm_parameter.jenkins_pass, "value", "NULL")
-    username=module.Instance-setup.jenkins_user
-    password=module.Instance-setup.jenkins_pass
+    username=var.username
+    password=var.password
 }
 
 

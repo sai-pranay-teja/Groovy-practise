@@ -14,3 +14,5 @@ variable "jobs"{
     ]
 }
 
+variable "username" {}
+variable "password" {}

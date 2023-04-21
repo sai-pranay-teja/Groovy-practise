@@ -4,3 +4,5 @@ module "Instance-setup" {
   
 }
 
+username=module.Instance-setup.jenkins_user
+password=module.Instance-setup.jenkins_pass
